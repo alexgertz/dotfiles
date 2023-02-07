@@ -1,6 +1,7 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
+--
 
--- Only required if you have packer in your `opt` pack
+-- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
@@ -14,9 +15,14 @@ return require('packer').startup(function()
   use '/usr/local/opt/fzf'
   use 'junegunn/fzf.vim'
   
-  -- Code completion etc
-  use 'neoclide/coc.nvim'
+  -- Editorconfig per repo / sub-path
   use 'editorconfig/editorconfig-vim'
+
+  -- Renaming, copy etc
+  use('tpope/vim-eunuch')
+
+  -- Code completions etc
+  use('neoclide/coc.nvim')
 
   -- PHP namespace import
   use 'arnaud-lb/vim-php-namespace'
